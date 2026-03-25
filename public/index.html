@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema</title>
+</head>
+<body>
+
+    <h1>Meu Sistema</h1>
+
+    <input type="text" id="nome" placeholder="Digite seu nome" required>
+    <input type="email" id="email" placeholder="Digite seu email" required>
+    <button id="btnEnviar">Enviar</button>
+
+    <script>
+        document.getElementById("btnEnviar").addEventListener("click", function() {
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+
+            console.log("Enviando para Node:", JSON.stringify({ nome, email }));
+
+            fetch("/enviar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome, email })
+            })
+            .then(res => res.text())
+            .then(msg => alert(msg))
+            .catch(err => console.error("Erro no fetch:", err));
+        });
+    </script>
+
+</body>
+</html>
