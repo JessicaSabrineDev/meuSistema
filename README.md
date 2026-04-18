@@ -27,6 +27,8 @@ Como rodar o projeto
 5. Abrir no navegador:
    http://localhost:3000
 
+Não usar live server
+
 Funcionalidades
 
 - Cadastro de dados

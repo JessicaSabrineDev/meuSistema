@@ -6,7 +6,8 @@ const conexao = mysql.createConnection({
     host: "localhost",      // servidor MySQL (localhost quando é local)
     user: "root",           // usuário do MySQL
     password: "",           // senha do MySQL (deixe vazio se não colocou)
-    database: "meu_sistema" // nome do banco que você criou no phpMyAdmin
+    database: "meu_sistema", // nome do banco 
+    port: 3306
 });
 
 // Conectar ao banco
